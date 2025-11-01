@@ -5,173 +5,250 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suraj Chavan | DevOps & Cloud Engineer</title>
   <style>
+    :root {
+      --bg: #0a192f;
+      --fg: #ccd6f6;
+      --accent: #64ffda;
+      --text: #8892b0;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
       line-height: 1.6;
-      margin: 0;
-      background: #f8f9fa;
-      color: #333;
     }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(10, 25, 47, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+      backdrop-filter: blur(6px);
+    }
+
+    nav h1 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
     header {
-      background: #0a192f;
-      color: #fff;
-      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 0 1rem;
     }
+
+    header h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-size: 3rem;
+      margin: 0.5rem 0;
     }
+
     header p {
-      margin-top: 0.5rem;
-      color: #ccd6f6;
+      max-width: 600px;
+      color: var(--text);
     }
+
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      max-width: 1000px;
+      margin: 5rem auto;
+      padding: 0 2rem;
     }
-    h2 {
-      color: #0a192f;
-      border-bottom: 2px solid #0a192f;
-      padding-bottom: 0.4rem;
+
+    h2.section-title {
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 1.5rem;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
-    .contact a {
-      color: #0077b5;
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem 1rem;
+    }
+
+    a {
+      color: var(--accent);
       text-decoration: none;
     }
-    .skills, .certs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 0.5rem 1rem;
-    }
+
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background: #0a192f;
-      color: #fff;
-      margin-top: 2rem;
+      padding: 2rem 0;
+      color: var(--text);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Animation */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.7s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        gap: 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Suraj Chavan</h1>
-  <p>DevOps & Cloud Engineer | AWS | Kubernetes | Terraform | CI/CD | Observability</p>
-</header>
+  <nav>
+    <h1>Suraj Chavan</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<section class="contact">
-  <h2>Contact</h2>
-  <p>📍 Panvel, Navi Mumbai 410206</p>
-  <p>📞 9930513701</p>
-  <p>✉️ <a href="mailto:surajhchavan@gmail.com">surajhchavan@gmail.com</a></p>
-  <p>🔗 <a href="https://www.linkedin.com/in/suraj-chavan-31321a15" target="_blank">LinkedIn Profile</a></p>
-</section>
+  <header id="home">
+    <h2>Hi, I’m</h2>
+    <h1>Suraj Chavan</h1>
+    <p>DevOps & Cloud Engineer with 13+ years of experience in automating, scaling, and securing infrastructure using AWS, Kubernetes, Terraform, Ansible, and CI/CD pipelines.</p>
+  </header>
 
-<section>
-  <h2>Summary</h2>
-  <p>
-    DevOps & Cloud Engineer with 13+ years of experience in automating, scaling, and securing cloud infrastructure (AWS, Azure, Kubernetes, Terraform, Ansible). Proven expertise in CI/CD automation, observability, and DevSecOps practices — enabling enterprises to achieve high availability, cost optimization, and faster release cycles.
-  </p>
-</section>
+  <section id="about" data-animate>
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I specialize in building scalable, secure, and automated cloud infrastructure. With hands-on expertise in AWS, Kubernetes, and modern CI/CD workflows, I help enterprises achieve high availability, observability, and cost optimization through DevOps best practices.
+    </p>
+  </section>
 
-<section>
-  <h2>Experience</h2>
+  <section id="experience" data-animate>
+    <h2 class="section-title">Experience</h2>
 
-  <h3>Lead DevOps — Hindustan Times (Nov 2021 – Present)</h3>
-  <ul>
-    <li>Optimized AWS cloud infrastructure for scalability, resilience, and cost savings.</li>
-    <li>Migrated EC2 workloads to Kubernetes/ECS clusters, improving elasticity and reliability.</li>
-    <li>Modernized legacy systems for cloud adoption via PoC initiatives.</li>
-    <li>Implemented observability stack using Prometheus, Grafana, Loki, and Jaeger.</li>
-    <li>Embedded DevSecOps in CI/CD pipelines ensuring secure deployments.</li>
-    <li>Standardized infrastructure automation using Terraform, Helm, and GitOps workflows.</li>
-  </ul>
+    <h3>Lead DevOps — Hindustan Times (Nov 2021 – Present)</h3>
+    <ul>
+      <li>Optimized AWS infrastructure for scalability, resilience, and cost efficiency.</li>
+      <li>Migrated workloads to Kubernetes/ECS clusters, improving reliability.</li>
+      <li>Implemented observability stack with Prometheus, Grafana, Loki, and Jaeger.</li>
+      <li>Embedded DevSecOps into CI/CD pipelines using Terraform and Helm.</li>
+    </ul>
 
-  <h3>Capgemini India Pvt Ltd (Jan 2020 – Nov 2021)</h3>
-  <ul>
-    <li>Automated AWS & Azure provisioning using Terraform templates.</li>
-    <li>Implemented Blue/Green deployments via Helm Charts with secure configs.</li>
-    <li>Configured Ansible for automated release management and deployments.</li>
-    <li>Built Prometheus-based monitoring for containerized workloads.</li>
-  </ul>
+    <h3>Capgemini India Pvt Ltd (Jan 2020 – Nov 2021)</h3>
+    <ul>
+      <li>Automated AWS & Azure environments using Terraform templates.</li>
+      <li>Built Blue/Green deployments with Helm and Kubernetes.</li>
+      <li>Configured Ansible for release automation and Prometheus for monitoring.</li>
+    </ul>
 
-  <h3>Nisum Consulting Pvt Ltd (Mar 2019 – Jan 2020)</h3>
-  <ul>
-    <li>Automated multi-service builds and infrastructure deployments using Terraform.</li>
-    <li>Developed Jenkins Groovy pipelines for microservices CI/CD.</li>
-    <li>Used Ansible for deployment automation and Kubernetes for pod management.</li>
-  </ul>
+    <h3>Earlier Roles</h3>
+    <p>
+      Worked with Nisum Consulting, Cinestaan Digital, Genesys, Justdial, and Web18 Software Services — delivering automation, CI/CD, and observability solutions.
+    </p>
+  </section>
 
-  <h3>Cinestaan Digital Pvt Ltd (Apr 2015 – Mar 2019)</h3>
-  <ul>
-    <li>Automated CI/CD using Jenkins pipelines with Docker & Kubernetes.</li>
-    <li>Deployed scalable Kubernetes clusters on Google Cloud.</li>
-    <li>Used Ansible for application deployments and task automation.</li>
-  </ul>
+  <section id="skills" data-animate>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <p>Docker / Kubernetes</p>
+      <p>Terraform / Ansible</p>
+      <p>Jenkins / Helm / GitHub Actions / Azure DevOps / AWS CodePipeline</p>
+      <p>Bash / Python</p>
+      <p>Prometheus / Grafana / New Relic / Kibana</p>
+      <p>Git / Bitbucket / CodeCommit</p>
+      <p>MySQL / MongoDB</p>
+      <p>Tomcat / Nginx / Apache / PHP</p>
+    </div>
+  </section>
 
-  <h3>Genesys International Corporation Ltd (Aug 2013 – Apr 2015)</h3>
-  <ul>
-    <li>Automated provisioning with CloudFormation, Puppet, and Nagios.</li>
-    <li>Developed shell scripts for AWS backups, AMI management, and ELB setup.</li>
-  </ul>
+  <section id="certifications" data-animate>
+    <h2 class="section-title">Certifications</h2>
+    <ul>
+      <li>Certified Kubernetes Administrator – LF-3uxryd59s9</li>
+      <li>AWS Certified Solutions Architect – FJEQ7SZCL2111P57</li>
+      <li>RedHat Certified System Administrator – 100-188-598</li>
+    </ul>
+  </section>
 
-  <h3>Justdial Pvt Ltd (Jul 2011 – Jul 2013)</h3>
-  <ul>
-    <li>Automated system admin tasks via shell scripts for Linux servers.</li>
-    <li>Configured Apache/Nginx servers with MySQL backend.</li>
-  </ul>
+  <section id="contact" data-animate>
+    <h2 class="section-title">Contact</h2>
+    <p>📍 Panvel, Navi Mumbai 410206</p>
+    <p>📞 9930513701</p>
+    <p>✉️ <a href="mailto:surajhchavan@gmail.com">surajhchavan@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/suraj-chavan-31321a15" target="_blank">LinkedIn Profile</a></p>
+  </section>
 
-  <h3>Web18 Software Services Ltd (Jun 2009 – Jun 2011)</h3>
-  <ul>
-    <li>Configured Zabbix for service monitoring and maintained backups.</li>
-    <li>Installed & managed Apache, PHP, and MySQL environments.</li>
-  </ul>
-</section>
+  <footer>
+    <p>© 2025 Suraj Chavan — Built with ❤️ and hosted on GitHub Pages</p>
+  </footer>
 
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <p>Docker / Kubernetes</p>
-    <p>Jenkins / Helm / GitHub Actions / Azure DevOps / AWS CodePipeline</p>
-    <p>Terraform / Ansible</p>
-    <p>Bash / Python</p>
-    <p>Prometheus / Grafana / New Relic / Kibana</p>
-    <p>Git / Bitbucket / CodeCommit</p>
-    <p>MySQL / MongoDB</p>
-    <p>Tomcat / Nginx / Apache / PHP</p>
-  </div>
-</section>
-
-<section>
-  <h2>Certifications</h2>
-  <div class="certs">
-    <p>Certified Kubernetes Administrator – LF-3uxryd59s9</p>
-    <p>AWS Certified Solutions Architect – FJEQ7SZCL2111P57</p>
-    <p>RedHat Certified System Administrator – 100-188-598</p>
-  </div>
-</section>
-
-<section>
-  <h2>Education</h2>
-  <p>SSC / HSC — Shivaji University, Kolhapur</p>
-  <p>Bachelor of Arts — Sikkim Manipal University (Distance Education)</p>
-</section>
-
-<footer>
-  <p>© 2025 Suraj Chavan — Hosted on GitHub Pages</p>
-</footer>
+  <script>
+    // Reveal on scroll animation
+    const sections = document.querySelectorAll("[data-animate]");
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+  </script>
 
 </body>
 </html>
